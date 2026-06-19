@@ -16,8 +16,8 @@
       options.services.tex-bot = with lib; with types; {
         enable = mkOption {
           type = bool;
-          default = true;
-          description = "Whether to run the tex-bot container.";
+          default = false;
+          description = "Whether to run the tex-bot service.";
         };
         token-file = mkOption {
           type = str;
