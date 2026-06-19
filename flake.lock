@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "docker-tools": {
+      "locked": {
+        "lastModified": 1770922875,
+        "narHash": "sha256-3JQQJ4CFct9xrlzMTmM2H7/Az26mJtmnfb61nAdikPI=",
+        "owner": "Danie-1",
+        "repo": "docker-tools-flake",
+        "rev": "ae6cac0355c52a315e6c5769fbc373346e0caf23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Danie-1",
+        "repo": "docker-tools-flake",
+        "type": "github"
+      }
+    },
+    "docker-tools_2": {
+      "locked": {
+        "lastModified": 1770922875,
+        "narHash": "sha256-3JQQJ4CFct9xrlzMTmM2H7/Az26mJtmnfb61nAdikPI=",
+        "owner": "Danie-1",
+        "repo": "docker-tools-flake",
+        "rev": "ae6cac0355c52a315e6c5769fbc373346e0caf23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Danie-1",
+        "repo": "docker-tools-flake",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "docker-tools": "docker-tools",
+        "tex2image": "tex2image"
+      }
+    },
+    "tex2image": {
+      "inputs": {
+        "docker-tools": "docker-tools_2"
+      },
+      "locked": {
+        "lastModified": 1781903365,
+        "narHash": "sha256-k+E7JiMlepKNsJFZmIl0yGyGGfdznBpZnJAq95m0ky0=",
+        "owner": "olympiad-bot",
+        "repo": "tex2image",
+        "rev": "8ebbce212d24a9561606650c177743f2d68db452",
+        "type": "github"
+      },
+      "original": {
+        "owner": "olympiad-bot",
+        "repo": "tex2image",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
