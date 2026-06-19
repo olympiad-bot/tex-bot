@@ -38,6 +38,7 @@ tex2image_client = TexRenderingClient(
 
 @client.tree.command()
 @app_commands.user_install()
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 @app_commands.describe(
     latex_snippet="Latex snippet to render.",
     ephemeral="If true, then the message with image will only be visible to you.",
