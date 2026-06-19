@@ -3,7 +3,7 @@
 
   inputs = {
     docker-tools.url = "github:Danie-1/docker-tools-flake";
-    tex2image.url = "git+file:///home/daniel/Documents/projects/tex2image";
+    tex2image.url = "github:olympiad-bot/tex2image";
   };
 
   outputs = { ... }: {
