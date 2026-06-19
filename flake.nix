@@ -57,25 +57,28 @@
         };
       };
 
-      config = lib.mkIf cfg.enable {
-        docker-tools.networks = [ cfg.docker-network ];
-        virtualisation.oci-containers.containers."tex-bot" = {
-          serviceName = "tex-bot";
-          image = "ghcr.io/olympiad-bot/tex-bot";
-          environment = {
-            TEX2IMAGE_HOST = tex2imageHost;
-            TEX2IMAGE_PORT = toString tex2imagePort;
-          } // lib.optionalAttrs (cfg.test-guild != null) {
-            TEST_GUILD_ID = cfg.test-guild;
+      config = lib.mkIf cfg.enable (lib.mkMerge [
+        {
+          docker-tools.networks = [ cfg.docker-network ];
+          virtualisation.oci-containers.containers."tex-bot" = {
+            serviceName = "tex-bot";
+            image = "ghcr.io/olympiad-bot/tex-bot";
+            environment = {
+              TEX2IMAGE_HOST = tex2imageHost;
+              TEX2IMAGE_PORT = toString tex2imagePort;
+            } // lib.optionalAttrs (cfg.test-guild != null) {
+              TEST_GUILD_ID = cfg.test-guild;
+            };
+            environmentFiles = [ cfg.token-file ];
+            dependsOn = lib.optionals auto [ "tex2image" ];
+            extraOptions = [
+              "--network-alias=bot"
+              "--network=${cfg.docker-network}"
+            ];
           };
-          environmentFiles = [ cfg.token-file ];
-          dependsOn = lib.optionals auto [ "tex2image" ];
-          extraOptions = [
-            "--network-alias=bot"
-            "--network=${cfg.docker-network}"
-          ];
-        };
-      };
+        }
+        (lib.mkIf auto { services.tex2image.enable = lib.mkDefault true; })
+      ]);
     };
   };
 }
