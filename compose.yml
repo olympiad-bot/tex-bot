@@ -1,0 +1,14 @@
+name: tex-bot
+
+services:
+  bot:
+    build: .
+    env_file:
+      - path: .env
+    environment:
+      - TEX2IMAGE_HOST=tex2image
+      - TEX2IMAGE_PORT=8000
+    depends_on:
+      - tex2image
+  tex2image:
+    image: ghcr.io/olympiad-bot/tex2image:v1.0.0

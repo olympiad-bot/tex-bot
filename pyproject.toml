@@ -1,0 +1,13 @@
+[project]
+name = "tex-bot"
+version = "0.1.0"
+description = "A simple discord bot for rendering tex snippets."
+readme = "README.md"
+authors = [
+    { name = "Olympiad Bot", email = "olybot@ggim.me" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "discord-py>=2.7.1",
+    "tex2image[client]>=1.0.0",
+]
