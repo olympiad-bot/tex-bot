@@ -1,6 +1,6 @@
 [project]
 name = "tex-bot"
-version = "0.1.1"
+version = "0.2.0"
 description = "A simple discord bot for rendering tex snippets."
 readme = "README.md"
 authors = [
