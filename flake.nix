@@ -6,7 +6,9 @@
     tex2image.url = "github:olympiad-bot/tex2image";
   };
 
-  outputs = { ... }: {
+  outputs = { self, ... }: let
+    version = (builtins.fromTOML (builtins.readFile (self + "/pyproject.toml"))).project.version;
+  in {
     nixosModules.default = { config, lib, ... }: let
       cfg  = config.services.tex-bot;
       auto = cfg.tex2image-instance == null;
@@ -62,7 +64,7 @@
           docker-tools.networks = [ cfg.docker-network ];
           virtualisation.oci-containers.containers."tex-bot" = {
             serviceName = "tex-bot";
-            image = "ghcr.io/olympiad-bot/tex-bot";
+            image = "ghcr.io/olympiad-bot/tex-bot:v${version}";
             environment = {
               TEX2IMAGE_HOST = tex2imageHost;
               TEX2IMAGE_PORT = toString tex2imagePort;
