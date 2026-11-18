@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/olympiad-bot/tex-bot/compare/v0.2.0...v0.2.1) (2026-11-18)
+
+
+### Bug Fixes
+
+* update uv.lock ([57119a1](https://github.com/olympiad-bot/tex-bot/commit/57119a1b6d0ca0e4e87e86b4c14a4ad294788528))
+
 ## [0.2.0](https://github.com/olympiad-bot/tex-bot/compare/v0.1.1...v0.2.0) (2026-11-18)
 
 
