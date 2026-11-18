@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://github.com/olympiad-bot/tex-bot/compare/v0.1.1...v0.2.0) (2026-11-18)
+
+
+### Features
+
+* add flake for tex-bot service ([7219098](https://github.com/olympiad-bot/tex-bot/commit/72190986e8df132431963781a0498d28eacb0710))
+
+
+### Bug Fixes
+
+* change input to git rather than local directory ([7adcd94](https://github.com/olympiad-bot/tex-bot/commit/7adcd9434719479c3de75a7a2a3a1e1e351b5806))
+* enable tex2image if auto is true ([1f6cfa0](https://github.com/olympiad-bot/tex-bot/commit/1f6cfa0dee81bf0b12465dd906956caa0567b880))
+* set enable default to false ([3352803](https://github.com/olympiad-bot/tex-bot/commit/335280312f859c7e01733bfd37f70efadf2ea135))
+* specify tag in flake.nix ([af99bff](https://github.com/olympiad-bot/tex-bot/commit/af99bff0f6fe785c003edadcf28a0db1fc52c232))
+
 ## [0.1.1](https://github.com/olympiad-bot/tex-bot/compare/v0.1.0...v0.1.1) (2026-06-19)
 
 
